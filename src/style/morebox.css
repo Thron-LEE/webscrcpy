@@ -1,0 +1,86 @@
+.text-area {
+    width: 100%;
+    resize: vertical;
+}
+
+.more-box {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    padding: 0 .714rem .714rem .714rem;
+    border-radius: 4px;
+}
+
+.text-with-shadow, .more-box label {
+    color: #000;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.spoiler > input ~ .box {
+    display: none;
+}
+
+.spoiler > input:checked ~ .box {
+    display: block;
+}
+
+.spoiler > label::before {
+    content: '►';
+    margin-right: 5px;
+}
+
+.spoiler > input:checked ~ label::before {
+    content: '▼';
+}
+
+.spoiler > input:checked ~ div {
+    display: block;
+    padding: 10px;
+}
+
+.spoiler > input {
+    display: none;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-weight: 700;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="number"], textarea {
+    display: block;
+    width: 100%;
+    padding: .5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #55595c;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="number"]:focus, textarea:focus {
+    border-color: #66afe9;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}

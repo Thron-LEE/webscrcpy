@@ -1,0 +1,178 @@
+:root {
+    --main-bg-color: #ffffff;
+    --stream-bg-color: #ffffff;
+    --shell-bg-color: #000000;
+    --text-shadow-color: #e6ffff;
+    --header-bg-color: #f2f2f2;
+    --controls-bg-color: rgba(255, 255, 255, 0.8);
+    --control-buttons-bg-color: #ffffff;
+    --text-color: #333333;
+    --text-color-light: #808080;
+    --link-color: #1976d2;
+    --link-color-light: #63a4ff;
+    --link-color_visited: #4f5b62;
+    --link-color_visited-light: #cfd8dc;
+    --svg-checkbox-bg-color: #2196f3;
+    --svg-button-fill: #4caf50;
+    --kill-button-hover-color: #d32f2f;
+    --url-color: #9e9e9e;
+    --button-text-color: #ff4081;
+    --button-border-color: #bfbfbf;
+    --progress-background-color: rgba(33, 150, 243, 0.2);
+    --progress-background-error-color: rgba(255, 0, 0, 0.2);
+    --font-size: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-bg-color: #242424;
+        --stream-bg-color: #333333;
+        --shell-bg-color: #000000;
+        --text-shadow-color: #2c2c2c;
+        --header-bg-color: #333333;
+        --controls-bg-color: rgba(51, 51, 51, 0.8);
+        --control-buttons-bg-color: #333333;
+        --text-color: #e6e6e6;
+        --text-color-light: #999999;
+        --link-color: #90caf9;
+        --link-color-light: #5472d3;
+        --link-color_visited: #78909c;
+        --link-color_visited-light: #455a64;
+        --svg-checkbox-bg-color: #2196f3;
+        --svg-button-fill: #ffffff;
+        --kill-button-hover-color: #d32f2f;
+        --url-color: #9e9e9e;
+        --device-list-stripe-color: #282828;
+        --device-list-default-color: #242424;
+        --button-text-color: #ff80ab;
+        --button-border-color: #343434;
+        --progress-background-color: rgba(33, 150, 243, 0.2);
+        --progress-background-error-color: rgba(255, 0, 0, 0.2);
+    }
+}
+
+html {
+    font-size: var(--font-size);
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:visited {
+    color: var(--link-color_visited);
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--main-bg-color);
+    position: absolute;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+body.shell {
+    background-color: var(--shell-bg-color);
+}
+
+body.stream {
+    background-color: var(--stream-bg-color);
+}
+
+.terminal-container {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+}
+
+:focus {
+    outline: none;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+.wait {
+    cursor: wait;
+}
+
+.device-view {
+    z-index: 1;
+    float: right;
+    display: inline-block;
+}
+
+.video-layer {
+    position: absolute;
+    z-index: 0;
+}
+
+.touch-layer {
+    position: absolute;
+    z-index: 1;
+}
+
+.video {
+    float: right;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: #000000;
+}
+
+
+.control-buttons-list {
+    float: right;
+    width: 3.715rem;
+    background-color: var(--control-buttons-bg-color);
+}
+
+.control-button {
+    margin: .357rem .786rem;
+    padding: 0;
+    width: 2.143rem;
+    height: 2.143rem;
+    border: none;
+    opacity: 0.75;
+    background-color: var(--control-buttons-bg-color);
+}
+
+.control-button:hover {
+    opacity: 1;
+}
+
+.control-wrapper > input[type=checkbox] {
+    display: none;
+}
+
+.control-wrapper > label {
+    display: inline-block;
+}
+
+.control-button > svg {
+    fill: var(--svg-button-fill);
+}
+
+.control-wrapper > input[type=checkbox].two-images:checked + label > svg.image-on {
+    display: block;
+}
+
+.control-wrapper > input[type=checkbox].two-images:not(:checked) + label > svg.image-on {
+    display: none;
+}
+
+.control-wrapper > input[type=checkbox].two-images:checked + label > svg.image-off {
+    display: none;
+}
+
+.control-wrapper > input[type=checkbox].two-images:not(:checked) + label > svg.image-off {
+    display: block;
+}
+
+.control-wrapper > input[type=checkbox]:checked + label > svg {
+    fill: var(--svg-checkbox-bg-color);
+}
